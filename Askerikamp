@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html lang="tr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Askeri RP Paneli</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1c001f);
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            background: black;
+            padding: 10px;
+            justify-content: center;
+            gap: 10px;
+            border-bottom: 2px solid red;
+        }
+        .menu-button {
+            background: #ff0033;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 0 10px #ff0033;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .oyun-baslik {
+            font-size: 18px;
+            color: #ff0033;
+        }
+        .oyun-butonu {
+            margin-top: 10px;
+            background: #ff0000;
+            color: white;
+            font-size: 20px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 15px red;
+        }
+        .oyun-butonu:hover {
+            background: #cc0000;
+        }
+        .volume-icon {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            font-size: 24px;
+        }
+    </style>
+ </head>
+ <body>
+  <header>
+   <button class="menu-button" onclick="window.location='#'">🎮 Oyna</button> <button class="menu-button" onclick="window.location='#'">📄 Başvuru</button> <button class="menu-button" onclick="window.location='#'">📢 Şikayet</button> <button class="menu-button" onclick="window.open('https://discord.gg/Y5Nm8P5a')">🔥 Terfi</button> <button class="menu-button" onclick="window.location='#'">📘 Hakkımızda</button>
+  </header>
+  <div class="container">
+   <h3 class="oyun-baslik">🎮 Oyuna Katıl</h3>
+   <p>Askeri görevine başlamak için oyuna gir!</p><button class="oyun-butonu" onclick="window.open('https://www.roblox.com/tr/games/73559674769632/TDF-TURKISH-ARMED-FORCES')">🚀 OYUNA GİR</button>
+  </div>
+  <div class="volume-icon">
+   🔊
+  </div>
+ </body>
+</html>
