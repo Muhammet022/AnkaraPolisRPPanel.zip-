@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Polis RP Paneli</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2020/10/12/14/26/background-5647713_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+    nav {
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 15px;
+    }
+    nav button {
+      background: linear-gradient(to right, #FFD700, #FFA500);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .panel {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button[type="submit"], .admin-action {
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      padding: 10px 15px;
+      border: none;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #duyuru {
+      background: gold;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .hidden { display: none; }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .btn-link {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    img {
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="duyuru">📢 Son Duyuru: Başvuru Sistemi Aktif! Discord sunucumuza da katılmayı unutmayın.</div>
+
+<header>Polis RP Başvuru Paneli</header>
+
+<nav>
+  <button onclick="show('basvuru')">📋 Başvuru</button>
+  <button onclick="show('sonuclar')">✅ Başvuru Sonuçları</button>
+  <button onclick="show('admin')">🔐 Admin Panel</button>
+  <button onclick="show('rutbe')">🎖️ Rütbe Sistemi</button>
+</nav>
+
+<section id="basvuru" class="panel">
+  <h2>👮 Polis Başvuru Formu</h2>
+  <form>
+    <input type="text" placeholder="RP Adınız" required>
+    <input type="text" placeholder="Discord Adınız" required>
+    <select required>
+      <option value="">Branş Seç</option>
+      <option>Polis Memuru</option>
+      <option>Çevik Kuvvet</option>
+      <option>Asayiş</option>
+      <option>Özel Harekat</option>
+      <option>Trafik Polisi</option>
+      <option>Yunus Polisi</option>
+      <option>KOM</option>
+      <option>Narkotik</option>
+    </select>
+    <textarea placeholder="Neden bu branşı istiyorsun?" required></textarea>
+    <button type="submit">Başvur</button>
+  </form>
+</section>
+
+<section id="sonuclar" class="panel hidden">
+  <h2>✅ Başvuru Sonuçları</h2>
+  <p>👤 Ahmet RP - <b style='color:lime'>Kabul</b></p>
+  <p>👤 Efe RP - <b style='color:red'>Red</b></p>
+</section>
+
+<section id="admin" class="panel hidden">
+  <h2>🔐 Admin Girişi</h2>
+  <input type="password" placeholder="Admin Şifresi" id="adminpass">
+  <button class="admin-action" onclick="adminLogin()">Giriş Yap</button>
+  <div id="admin-panel" class="hidden">
+    <h3>✅ Başvuruları Yönet</h3>
+    <p>Ahmet RP - <button>Kabul</button> <button>Red</button></p>
+    <p>Efe RP - <button>Kabul</button> <button>Red</button></p>
+  </div>
+</section>
+
+<section id="rutbe" class="panel hidden">
+  <h2>🎖️ Polis Rütbe Sistemi</h2>
+  <img src="https://cdn.discordapp.com/attachments/123456789012345678/123456789012345678/rutbe_sistemi.png" alt="Rütbe Sistemi">
+</section>
+
+<footer>
+  <a class="btn-link" href="https://discord.gg/qaHGf4Dg" target="_blank">🔗 Discord Sunucusu</a>
+  <a class="btn-link" href="https://www.roblox.com/tr/games/70369540309850/Ankara-City" target="_blank">🎮 Roblox Oyunu</a>
+</footer>
+
+<script>
+  function show(id) {
+    document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
+  }
+
+  function adminLogin() {
+    const pass = document.getElementById("adminpass").value;
+    if (pass === "polis123") {
+      document.getElementById("admin-panel").classList.remove("hidden");
+    } else {
+      alert("Hatalı şifre!");
+    }
+  }
+</script>
+
+</body>
+</html>
